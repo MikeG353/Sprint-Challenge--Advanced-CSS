@@ -15,8 +15,7 @@
   }
 
   .space-images {
-    display: flex;
-    flex-wrap: wrap;
+    .flex-setup (flex, row);
     width: 100%;
 
     img {
@@ -51,8 +50,7 @@
     margin-top: 60px;
     border-top: 1px solid @main-border-color;
     padding: 50px 60px;
-    display: flex;
-    justify-content: center;
+    .flex-setup(flex, row, center);
     @media @phone {
       display: flex;
       flex-flow: column-reverse;
@@ -77,11 +75,15 @@
 
       .btn {
         button {
-          color: white;
-          background-color: #05093A;
           font-size: 2.1rem;
           padding: 13px;
-          border-radius: 7px;
+          
+          .button(white, midnightblue, 7px);
+          &:hover {
+            color: midnightblue;
+            background-color: white;
+          }
+          
           @media @phone {
             width: 100%;
           }
